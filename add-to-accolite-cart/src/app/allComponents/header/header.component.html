@@ -1,0 +1,21 @@
+<header>
+    <div class="navbar" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'notFixed'">
+        <div class="navbarBrand align-item-center d-flex">
+            <img src="../../../assets/accoliteLogo.jpg" class="imageView">&nbsp;
+               <strong class="accoliteShop">Accolite Shop</strong>
+               <div class="form-group">
+                <input type="text" class="formControl search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search here">
+                <span class="fas fa-search searchIcon"></span>
+               </div>
+               
+        </div>
+        <button routerLink="/cart" class="btn cart">
+            <i class="fas fa-cart-plus"></i>
+            <div class="badge bg-danger">{{totalCartItem}}</div>
+        </button>
+        <button class="btn signout" >
+            <i (click)="openDialog()" class="fas fa-sign-out-alt"></i>
+        </button>
+        <app-logout *ngIf="showDialog" (close)="closeDialog()"></app-logout>
+    </div>
+</header>

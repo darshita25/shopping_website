@@ -1,0 +1,41 @@
+body{
+    background: url(../../../assets/bg.avif);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.login-box{
+    width: 400px;
+    height: 480px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 23%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+h1{
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.login-box input{
+    /* width: 100%; */
+    margin-bottom: 20px;
+}
+.login-box input[type="email"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+}
+.btn{
+    margin-left: 130px;
+    color: #fff;
+    border: 1px solid #fff;
+}

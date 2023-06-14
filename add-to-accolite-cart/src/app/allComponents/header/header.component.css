@@ -1,0 +1,53 @@
+.navbar
+{
+    background-color: bisque;
+    border-bottom: 1px solid black;
+}
+.imageView{
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.formControl{
+    border-radius: 1px;
+    width: 400px;
+    margin-left: 20px;
+    height: 40px;
+}
+.searchIcon
+{
+    position:relative;
+    z-index: 12;
+    right: 10%;
+    color: black;
+    top: px;
+}
+.cart{
+    margin-right: 0;
+    margin-left: 600px;
+}
+.signout{
+    margin-right: 20px;
+    font-size: large;
+    margin-left: 0;
+}
+.fa-cart-plus{
+    font-size: 30px;
+}
+.bg-danger{
+    font-size:10px;
+}
+.accoliteShop{
+    font-size: 23px;
+}
+.notFixed{
+    position: static;
+    transition: 0.2s linear;
+    top: -50px;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    transition: 0s linear;
+    z-index:1000;
+}

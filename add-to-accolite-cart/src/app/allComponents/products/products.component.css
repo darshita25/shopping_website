@@ -1,0 +1,79 @@
+.cardTop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .25rem;
+}
+.item{
+    margin:7px 15px;
+    text-align: center;
+}
+.item a:hover{
+    color:orangered;
+}
+
+.card{
+    padding: 20px;
+    margin: 40px;
+}
+.card img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+.card img:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.btn{
+    background-color: bisque;
+    border: 1px solid black;
+    font-weight: 500;
+    width: 100%;
+}
+.title{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+    cursor: pointer;
+}
+.title:hover{
+    color: orangered !important;
+}
+.desc{
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100ch;
+    text-overflow: ellipsis;
+}
+.page{
+    padding:15px;
+    display: flex;
+    justify-content: center;
+    background-color: bisque;
+    font-weight: 500;
+    border-top: 1px solid black;
+}
+.ngx-pagination .current{
+    background: #e84121;
+}
+h6{
+    font-size: medium;
+    font-weight: 500;
+}
+.view{
+    width: auto;
+    height: auto;
+    float: right;
+    margin-right: 20px;
+    padding-right: 10px;
+}

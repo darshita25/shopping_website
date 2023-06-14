@@ -1,0 +1,24 @@
+<head>
+    <title>Login</title>
+</head>
+<body>
+        <div class="login-box">
+            <img style="width: 50px;margin-left: 135px;margin-top: 0px;" src="../../../assets/accoliteLogo.jpg">
+            <br>
+            <br>
+            <h1>Accolite welcome you to shop!</h1>
+            <form>
+                <p>Username</p>
+                <input [(ngModel)]="logins.userId" type="email" name="email" class="form-control" placeholder="Enter your email">
+                <p>Password</p>
+                <input formControlName="Form.password" [(ngModel)]="logins.password" type="password" name="password" class="form-control" placeholder="Enter your password">
+                <button class="btn" type="submit" (click)="clickButton()">Login</button>
+            </form>
+        </div>
+</body>
+<!-- <div ngModelGroup="person">
+    <input [(ngModel)]="person.name" name="firstName">
+  </div> -->
+  <!-- <div *ngIf="emailControl.invalid && flag">
+                    <div style="font-size: 10px;" *ngIf="emailControl.errors">Email is Invalid</div>
+                </div> -->

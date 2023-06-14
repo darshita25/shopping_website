@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="cardTop container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="../../../assets/allProducts.png">
+                <h6>All Products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')">
+                <img style="height: 64px;" src="../../../assets/electronics.png">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fashion')">
+                <img style="height: 64px;" src="../../../assets/fashion.png">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewellry')">
+                <img style="height: 64px;
+                " src="../../../assets/jewellry.png">
+                <h6>Jewllery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!flag2">
+<a class="btn view" (click)="changeFlag()" (click)="changeFlagAgain()">=</a>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'titleProduct' | paginate:{itemsPerPage:9,currentPage:p}">
+          <div class="card col-md-3">
+            <img src="{{item.imageUrl}}">
+             <a class="title" (click)="openPopup(item)">{{item.titleProduct}}</a> 
+             <app-double-click-product [product]="selectedProduct" *ngIf="showPopup" (close)="closePopup()"></app-double-click-product>
+             <p class="desc">{{item.description}}</p>
+            <p><strong>Price:</strong>₹{{item.priceProductRupees}}</p> 
+            <div>
+              <button class="btn" [hidden]="item.status==1" (click)="addToCart(item)">Add to cart</button>
+              <button class="btn" style="background-color: rgb(122, 183, 122);color: aliceblue;" [hidden]="item.status==0">Added</button>
+            </div>
+        </div>
+    </ng-container>
+    </div>
+</div>
+</div>
+
+<div *ngIf="flag2">
+    <a class="btn view" (click)="changeFlag()" (click)="changeFlagAgain()">||||</a>
+    <br>
+    <br>
+    <br>
+ <div class="container">
+    <thead>
+    <th>Sr.No</th>
+    <th>Product Name</th>
+    <th>Product Image</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filterCategory| paginate:{itemsPerPage:9,currentPage:p} | filter:searchKey:'titleProduct'; let i=index">
+        <td>{{i+1}}</td>
+                        <td style="width: 15%;">{{item.titleProduct}}</td>
+                        <td><img style="width:120px;height: 120px;" src="{{item.imageUrl}}"></td>
+                        <td style="width: 15%;">{{item.description}}</td>
+                        <td style="width: 15%;"> ₹{{item.priceProductRupees}}</td>
+                        <td><button class="btn" [hidden]="item.status==1" (click)="addToCart(item)">Add to cart</button>
+                            <button class="btn" style="background-color: rgb(122, 183, 122);color: aliceblue;" [hidden]="item.status==0">Added</button>
+                        </td>
+                        </tr>
+                        <hr>
+                        <br>
+                        <br>
+    </tbody>
+ </div>
+</div>
+
+<div class="page">
+<pagination-controls (pageChange)="p=$event" class="float-right"></pagination-controls>
+</div>
